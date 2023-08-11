@@ -1,0 +1,84 @@
+/* mobile first style */
+body,
+h1,
+h2,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Header starts here */
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+/* Header ends here */
+.settings-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.about-section,
+.notification-section,
+.delete-section {
+  margin-bottom: 2rem;
+}
+
+.about-section h2,
+.notification-section h2,
+.delete-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.notification-section label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.delete-button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Additional settings page styles ... */
+
+/* Navigation starts here */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.tab {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.tab.active {
+  background-color: #555;
+}
+/* Navigation ends here */
