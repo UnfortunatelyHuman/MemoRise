@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MemoRise</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="/manifest.json">
     <link rel="icon" type="image/png" sizes="196x196" href="icons/favicon-196.png">
+    <meta name="theme-color" content="#333">
+    <meta name="apple-mobile-web-app-title" content="MemoRise" />
+    <meta name="application-name" content="MemoRise" />
     <meta name="msapplication-square70x70logo" content="icons/mstile-icon-128.png">
     <meta name="msapplication-square150x150logo" content="icons/mstile-icon-270.png">
     <meta name="msapplication-square310x310logo" content="icons/mstile-icon-558.png">
@@ -76,7 +80,7 @@
         media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
 </head>
 
-<body>
+<body class="fade-in">
     <header>
         <h1>MemoRise</h1>
     </header>
@@ -84,21 +88,8 @@
         <div class="home">
             <div class="notes-list" id="notes-list">
                 <!-- List of notes will be displayed here -->
-                <!-- <div class="note-card">
-                    <h3 class="note-subject">Note 1</h3>
-                    <p class="note-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quod
-                        mollitia eos. Quisquam modi itaque velit atque! Doloremque vitae tenetur maxime repellat aut
-                        velit quibusdam. Ea quidem aperiam eius eligendi.</p>
-                    <button class="delete-button">Delete</button>
-                </div>
-                <div class="note-card">
-                    <h3 class="note-subject">Note2</h3>
-                    <p class="note-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis, neque
-                        molestiae. Aut officia dolore consequuntur ex odio nam voluptatem quos laborum rerum, aperiam
-                        autem quasi soluta deserunt quod asperiores tempore est optio vero maxime nobis vitae! Similique
-                        beatae repellat, ad itaque, illum dolorum odit nemo amet cumque facere ducimus odio.</p>
-                    <button class="delete-button">Delete</button>
-                </div> -->
+                <p id="errorMessage"></p>
+
             </div>
             <button class="add-button" id="add-button">Add Note</button>
         </div>
@@ -110,13 +101,24 @@
             <button class="save-button" id="save-button">Save</button>
             <button class="cancel-button" id="cancel-button">Cancel</button>
         </div>
-
+        <div id="side-menu-right" class="side-menu-right">
+            <h2>Edit Note</h2>
+            <label for="note-subject-right">Subject:</label>
+            <input type="text" id="note-subject-right" required>
+            <label for="note-description-right">Description:</label>
+            <textarea id="note-description-right" required></textarea>
+            <button id="save-button-right">Save</button>
+            <button id="cancel-button-right">Cancel</button>
+        </div>
     </main>
     <nav class="bottom-nav">
         <a href="#" class="tab active">Home</a>
         <a href="settings.html" class="tab">Settings</a>
     </nav>
-    <script src="/js/script.js"></script>
+    <!-- Add this script tag to include the Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js" type="module"></script>
+    <script src="/js/script.js" type="module"></script>
 </body>
 
 </html>

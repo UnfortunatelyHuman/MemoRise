@@ -12,7 +12,14 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
 }
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
 
+body.fade-in {
+  opacity: 1;
+}
 /* Header starts here */
 header {
   background-color: #333;
@@ -30,20 +37,9 @@ main {
   align-items: center;
 }
 
-/* #notes-list {
-  background-color: white;
-  width: 100%;
-  max-width: 300px;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
+#errorMessage {
+  color: red;
+}
 .add-button {
   background-color: #333;
   color: white;
@@ -92,9 +88,24 @@ main {
   cursor: pointer;
   margin-top: 5px;
 }
+
+.edit-button {
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.edit-button:hover {
+  background-color: #ff9800;
+}
 /* Note card ends */
 
-/* code for side menu  */
 .home {
   position: relative;
   display: flex;
@@ -102,7 +113,7 @@ main {
   align-items: center;
   padding: 2rem;
 }
-
+/* code for side menu left  */
 .save-button {
   background-color: #333;
   color: white;
@@ -121,15 +132,17 @@ main {
   height: 100%;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: left 0.3s;
+  transition: transform 0.3s; /* Change to transform */
   display: flex;
   flex-direction: column;
   padding: 1rem;
 }
 
-.open {
-  left: 0;
+.side-menu.open {
+  left: 0px;
+  transform: translateX(0); /* Change to translateX(0) */
 }
+
 .cancel-button {
   background-color: #ccc;
   color: #333;
@@ -159,8 +172,86 @@ main {
   height: 150px; /* Initial height */
   margin-bottom: 1rem;
 }
-/* Side menu ends */
+/* Side menu left ends */
 
+/* Side menu right starts */
+.side-menu-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: transform 0.3s; /* Change to transform */
+  z-index: 1;
+  transform: translateX(100%);
+}
+
+.side-menu-right.open {
+  right: 0px;
+  transform: translateX(0); /* Change to translateX(0) */
+}
+
+.side-menu-right h2 {
+  margin-top: 0;
+}
+
+.side-menu-right label,
+.side-menu-right input,
+.side-menu-right textarea,
+.side-menu-right button {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+#note-subject-right {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+#note-description-right {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  resize: vertical;
+  height: 150px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+#save-button-right {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+#cancel-button-right {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0;
+  margin-bottom: 10px;
+}
+/* Side menu right ends */
 /*** Main ends here */
 
 /* Navigation starts here */

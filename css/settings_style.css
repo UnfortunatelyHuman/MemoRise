@@ -54,8 +54,61 @@ header {
   border-radius: 4px;
   cursor: pointer;
 }
+/* Styles for the settings section */
+.settings-section {
+  margin-top: 20px;
+}
 
-/* Additional settings page styles ... */
+.section-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Styles for the battery information */
+.battery-info {
+  display: flex;
+  align-items: left;
+}
+
+.battery-icon {
+  font-size: 2rem;
+  margin-right: 10px;
+  color: #4caf50; /* Green color for battery icon */
+}
+
+.battery-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.battery-percentage {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.battery-status {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #4caf50; /* Green color for charging status */
+}
+/* Battery parts ends */
+
+/* Network section starts */
+.network-info {
+  margin-top: 10px;
+}
+
+.network-status,
+.network-type,
+.network-downlink,
+.network-uplink {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Network section ends */
 
 /* Navigation starts here */
 .bottom-nav {
