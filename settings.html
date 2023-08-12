@@ -18,11 +18,11 @@
                 <h2>About</h2>
                 <p>Using this application you can create and store your notes.</p>
             </section>
-            <section class="notification-section">
+            <!-- <section class="notification-section">
                 <h2>Notifications</h2>
                 <label for="enable-notifications">Enable Notifications:</label>
                 <input type="checkbox" id="enable-notifications">
-            </section>
+            </section> -->
             <section class="delete-section">
                 <button class="delete-button" id="delete-button">Delete All Data</button>
             </section>
@@ -32,29 +32,30 @@
             <a href="#" class="tab active">Settings</a>
         </nav>
 
-        <div class="settings-section">
-            <h2 class="section-title">Battery Information</h2>
-            <div class="battery-info">
-                <div class="battery-icon">
-                    <span class="battery-icon">🔋</span>
+        <div class="info-container">
+            <div class="battery-section">
+                <h2 class="battery-title">Battery Information</h2>
+                <div class="battery-info">
+                    <div class="battery-icon">
+                        <span class="battery-icon">🔋</span>
+                    </div>
+                    <div class="battery-details">
+                        <p class="battery-percentage">N/A</p>
+                        <p class="battery-status">N/A</p>
+                    </div>
                 </div>
-                <div class="battery-details">
-                    <p class="battery-percentage">N/A</p>
-                    <p class="battery-status">N/A</p>
+            </div>
+            <!-- Network Information Section -->
+            <div class="network-section">
+                <h2 class="network-title">Network Information</h2>
+                <div class="network-info">
+                    <span class="network-status">Status: N/A</span>
+                    <span class="network-type">Type: N/A</span>
+                    <span class="network-downlink">Downlink: N/A</span>
+                    <span class="network-uplink">Uplink: N/A</span>
                 </div>
             </div>
         </div>
-        <!-- Network Information Section -->
-        <div class="setting-section">
-            <h2 class="section-title">Network Information</h2>
-            <div class="network-info">
-                <span class="network-status">Status: N/A</span>
-                <span class="network-type">Type: N/A</span>
-                <span class="network-downlink">Downlink: N/A</span>
-                <span class="network-uplink">Uplink: N/A</span>
-            </div>
-        </div>
-
     </div>
     <!-- Add this script tag to include the Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js" type="module"></script>

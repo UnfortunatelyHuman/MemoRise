@@ -203,11 +203,17 @@ const errorMessage = document.getElementById("errorMessage");
 
 // Event listener for the "Add" button to open the side menu
 addButton.addEventListener("click", () => {
+  if ("vibrate" in navigator) {
+    navigator.vibrate(200);
+  }
   sideMenu.classList.add("open");
 });
 
 // Event listener for the "Save" button in the side menu
 saveButton.addEventListener("click", () => {
+  if ("vibrate" in navigator) {
+    navigator.vibrate(200);
+  }
   const newNoteSubject = noteSubjectInput.value.trim();
   const newNoteDescription = noteDescriptionInput.value.trim();
 
@@ -263,6 +269,9 @@ function addNoteToList(note) {
     noteCard.appendChild(editButton);
     // Event listener for the edit button
     editButton.addEventListener("click", () => {
+      if ("vibrate" in navigator) {
+        navigator.vibrate(200);
+      }
       openEditForm(note);
     });
 
@@ -274,6 +283,9 @@ function addNoteToList(note) {
     if (noteCard.hasChildNodes) {
       console.log("noteCard has child");
       deleteButton.addEventListener("click", () => {
+        if ("vibrate" in navigator) {
+          navigator.vibrate(200);
+        }
         memoRiseDB
           .removeNotes(note.id)
           .then(() => {
@@ -300,6 +312,9 @@ function openEditForm(note) {
   // Show the save button for editing
   saveButtonRight.textContent = "Save Edit";
   saveButtonRight.addEventListener("click", () => {
+    if ("vibrate" in navigator) {
+      navigator.vibrate(200);
+    }
     saveEditedNote(note.id);
   });
   sideMenuRight.classList.add("open");
@@ -334,6 +349,9 @@ function saveEditedNote(noteId) {
 
 // Event listener for the "Cancel" button in the side menu
 cancelButton.addEventListener("click", () => {
+  if ("vibrate" in navigator) {
+    navigator.vibrate(200);
+  }
   sideMenu.classList.remove("open");
   noteSubjectInput.value = "";
   noteDescriptionInput.value = "";
@@ -341,6 +359,9 @@ cancelButton.addEventListener("click", () => {
 
 // Event listener for the "Cancel" button in the right side menu
 cancelButtonRight.addEventListener("click", () => {
+  if ("vibrate" in navigator) {
+    navigator.vibrate(200);
+  }
   closeRightSidebar();
 });
 // Function to close the right side bar

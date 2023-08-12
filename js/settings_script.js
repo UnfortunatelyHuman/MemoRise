@@ -28,6 +28,9 @@ const deleteButton = document.getElementById("delete-button");
 
 // Event listener for the delete button
 deleteButton.addEventListener("click", () => {
+  if ("vibrate" in navigator) {
+    navigator.vibrate(200);
+  }
   const collectionName = "ListOfNotes";
   if (window.confirm("Are you sure you want to delete all data?")) {
     deleteAllData(collectionName);
